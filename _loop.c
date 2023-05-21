@@ -15,16 +15,18 @@
 void _loop(char **buffer, char **env)
 {
 	char *prompt = "-> ";
+	int loop = 1;
 	char inputcmd[100];
 	char *input = NULL;
 	char *tmp_args[10];
 	ssize_t n = 0;
-	int loop = 1;
 	int input_res;
 	struct stat sst;
-
+	
 	while (1 && loop == 1)
 	{
+		if (isatty(STDIN_FILENO) == 0)
+			loop = 0;
 		printf("%s", prompt);
 		input_res = _get_user_input(n, inputcmd, input);
 		if (input_res == 1)

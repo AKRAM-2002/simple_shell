@@ -13,7 +13,7 @@
  * @env: array of env variables
  * Return: 0 on success&exit
 */
-int main(int ac, char **av, char **env)
+int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char **env)
 {
 	int i_env = 0;
 	char **buffer;
