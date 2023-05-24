@@ -14,13 +14,13 @@
  * Return: 0 on success&exit
 */
 /* int ac __attribute__((unused)), char **av __attribute__((unused))*/
-int main(int ac, __attribute__((unused))char **av, char **env)
+int main(int ac, char **av, char **env)
 {
-	int ttt;
 	int i_env = 0;
 	char **buffer;
 
-	ttt = ac;
+	(void)ac;
+	(void)av;
 
 	while (env[i_env] != NULL)
 		i_env++;
