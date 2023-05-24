@@ -12,6 +12,7 @@
  * @env: env variables.
  * @tmp_args: arrays of command args
  * @buffer: a tmp storage variable
+ * @av: user command
  * Return: Nothing
 */
 void _find_path(char **env, char **tmp_args, char **buffer, char **av)

@@ -21,7 +21,7 @@ int main(int ac, char **av, char **env)
 
 	(void)ac;
 	(void)av;
-	
+
 	while (env[i_env] != NULL)
 		i_env++;
 
