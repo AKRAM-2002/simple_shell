@@ -27,7 +27,7 @@ void _loop(char **buffer, char **env)
 	{
 		if (isatty(STDIN_FILENO) == 0)
 			loop = 0;
-		printf("%s", prompt);
+		write(STDOUT_FILENO, prompt, strlen(prompt));
 		input_res = _get_user_input(n, inputcmd, input);
 		if (input_res == 1)
 			break;
