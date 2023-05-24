@@ -14,7 +14,7 @@
 */
 void _loop(char **buffer, char **env)
 {
-	char *prompt = "-> ";
+	char *prompt = " ($) ";
 	int loop = 1;
 	char inputcmd[100];
 	char *input = NULL;
@@ -22,7 +22,7 @@ void _loop(char **buffer, char **env)
 	ssize_t n = 0;
 	int input_res;
 	struct stat sst;
-	
+
 	while (1 && loop == 1)
 	{
 		if (isatty(STDIN_FILENO) == 0)

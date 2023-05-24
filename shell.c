@@ -8,15 +8,19 @@
 #include "shell.h"
 /**
  * main - main function
- * @ac: number of args
+ * @ac: nbr of args
  * @av: array of args
  * @env: array of env variables
  * Return: 0 on success&exit
 */
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char **env)
+/* int ac __attribute__((unused)), char **av __attribute__((unused))*/
+int main(int ac, __attribute__((unused))char **av, char **env)
 {
+	int ttt;
 	int i_env = 0;
 	char **buffer;
+
+	ttt = ac;
 
 	while (env[i_env] != NULL)
 		i_env++;
