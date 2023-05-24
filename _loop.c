@@ -47,5 +47,5 @@ void _loop(char **buffer, char **env, char **av)
 		else
 			_find_path(env, tmp_args, buffer, av);
 	}
-	free(input);
+
 }

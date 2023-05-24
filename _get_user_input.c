@@ -1,7 +1,7 @@
 #include "shell.h"
 #include <string.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * _get_user_input - takes the user input and stores it.
  * @n: var
@@ -23,5 +23,6 @@ int _get_user_input(ssize_t n, char inputcmd[100], char *input)
 	{
 		return (1);
 	}
+	free(input);
 	return (0);
 }

@@ -31,5 +31,7 @@ int main(int ac, char **av, char **env)
 
 	_loop(buffer, env, av);
 
+	free(buffer);
+
 	return (0);
 }
