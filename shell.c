@@ -26,6 +26,8 @@ int main(int ac, char **av, char **env)
 		i_env++;
 
 	buffer = (char **)malloc(sizeof(char *) * (i_env + 1));
+	if (buffer == NULL)
+		free(buffer);
 
 	buffer[i_env] = NULL;
 
