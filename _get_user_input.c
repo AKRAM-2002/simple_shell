@@ -16,6 +16,11 @@ int _get_user_input(ssize_t n, char inputcmd[100], char *input)
 	char *exitStr = "exit";
 
 	n = getline(&input, &size, stdin);
+	if (n == -1 || (n == 1 && input[0] == '\n'))
+	{
+		free(input);
+		return (10);
+	}
 	strcpy(inputcmd, input);
 	if (inputcmd[n - 1] == '\n')
 		inputcmd[n - 1] = '\0';

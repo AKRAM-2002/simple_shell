@@ -32,6 +32,8 @@ void _loop(char **buffer, char **env, char **av)
 		if (loop != 0)
 			write(STDOUT_FILENO, prompt, strlen(prompt));
 		input_res = _get_user_input(n, inputcmd, input);
+		if (input_res == 10)
+			continue;
 		if (input_res == 1)
 			break;
 		_handle_args(tmp_args, inputcmd);
