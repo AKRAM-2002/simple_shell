@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
@@ -12,7 +13,7 @@
  * @buffer: buffer
  * Return: 0 on success&exit
 */
-void _loop(char **buffer, char **env)
+void _loop(char **buffer, char **env, char **av)
 {
 	char *prompt = " ($) ";
 	int loop = 1;
@@ -38,9 +39,11 @@ void _loop(char **buffer, char **env)
 			_update_PWD(env);
 		}
 		if (stat(tmp_args[0], &sst) == 0)
+		{
 			_exec(tmp_args, env);
+		}
 		else
-			_find_path(env, tmp_args, buffer);
+			_find_path(env, tmp_args, buffer, av);
 	}
 	free(input);
 }
