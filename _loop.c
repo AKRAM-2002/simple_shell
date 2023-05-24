@@ -28,7 +28,8 @@ void _loop(char **buffer, char **env, char **av)
 	{
 		if (isatty(STDIN_FILENO) == 0)
 			loop = 0;
-		write(STDOUT_FILENO, prompt, strlen(prompt));
+		if (loop != 0)
+			write(STDOUT_FILENO, prompt, strlen(prompt));
 		input_res = _get_user_input(n, inputcmd, input);
 		if (input_res == 1)
 			break;
