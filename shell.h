@@ -2,7 +2,7 @@
 #define _SHELL_H_
 #include <sys/types.h>
 
-void _exec(char **tmp_args, char** env);
+void _exec(char **tmp_args, char **env);
 void _find_path(char **env, char **tmp_args, char **buffer);
 void _exec_path(char *tmp_path, char **tmp_args, char **env);
 void _update_PWD(char **env);
