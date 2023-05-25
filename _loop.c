@@ -16,7 +16,7 @@
 */
 void _loop(char **buffer, char **env, char **av)
 {
-	char *prompt = " ($) ";
+	char *prompt = "---->";
 	int loop = 1;
 	char inputcmd[100];
 	char *input = NULL;
