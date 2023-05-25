@@ -41,7 +41,6 @@ void _loop(char **buffer, char **env, char **av)
 		{
 			_handle_cd(env, tmp_args, buffer);
 			_update_PWD(env);
-			continue;
 		}
 		if (stat(tmp_args[0], &sst) == 0)
 		{

@@ -25,18 +25,18 @@ void _find_path(char **env, char **tmp_args, char **buffer, char **av)
 	found = 0;
 	for (i = 0; env[i] != NULL; i++)
 	{
-	buffer[i] = _strdup(env[i]);
+	buffer[i] = strdup(env[i]);
 	name = strtok(buffer[i], "=");
-	res = _strcmp(name, "PATH");
+	res = strcmp(name, "PATH");
 	if (res == 0)
 		{
 		name = strtok(NULL, "=");
 		name = strtok(name, ":");
 		while (name != NULL)
 			{
-			_strcpy(tmp_path, name);
-			_strcat(tmp_path, "/");
-			_strcat(tmp_path, tmp_args[0]);
+			strcpy(tmp_path, name);
+			strcat(tmp_path, "/");
+			strcat(tmp_path, tmp_args[0]);
 			if (stat(tmp_path, &st) == 0)
 				{
 				_exec_path(tmp_path, tmp_args, env);

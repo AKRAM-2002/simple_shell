@@ -17,9 +17,9 @@ void _handle_cd(char **env, char **tmp_args, char **buffer)
 
 	for (i = 0; env[i] != NULL; i++)
 	{
-		buffer[i] = _strdup(env[i]);
+		buffer[i] = strdup(env[i]);
 		name = strtok(buffer[i], "=");
-		res = _strcmp(name, "HOME");
+		res = strcmp(name, "HOME");
 		if (res == 0)
 		{
 			name = strtok(NULL, "=");

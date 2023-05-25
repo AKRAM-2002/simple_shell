@@ -18,13 +18,13 @@ void _update_PWD(char **env)
 	getcwd(pathv, sizeof(pathv));
 	for (i = 0; env[i] != NULL; i++)
 	{
-		tokstr[i] = _strdup(env[i]);
+		tokstr[i] = strdup(env[i]);
 		tok = strtok(tokstr[i], "=");
 		if (strcmp(tok, "PWD") == 0)
 		{
-			_strcat(new_path, pathv);
+			strcat(new_path, pathv);
 			tok = strtok(NULL, "=");
-			env[i] = _strdup(new_path);
+			env[i] = strdup(new_path);
 		}
 	}
 }

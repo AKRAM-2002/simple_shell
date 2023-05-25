@@ -21,7 +21,7 @@ int _get_user_input(ssize_t n, char inputcmd[100], char *input)
 		free(input);
 		return (10);
 	}
-	_strcpy(inputcmd, input);
+	strcpy(inputcmd, input);
 	if (inputcmd[n - 1] == '\n')
 		inputcmd[n - 1] = '\0';
 	if (strcmp(inputcmd, exitStr) == 0)

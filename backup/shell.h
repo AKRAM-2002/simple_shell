@@ -10,10 +10,5 @@ void _handle_cd(char **env, char **tmp_args, char **buffer);
 int _get_user_input(ssize_t n, char inputcmd[100], char *input);
 void _loop(char **buffer, char **env, char **av);
 void _handle_args(char **tmp_args, char inputcmd[100]);
-char *_strcat(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-char *_strdup(const char *s);
 
 #endif

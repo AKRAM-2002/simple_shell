@@ -14,11 +14,11 @@ void _handle_args(char **tmp_args, char inputcmd[100])
 	int tmp_i = 0;
 	char tmp_cmd[100];
 
-	_strcpy(tmp_cmd, inputcmd);
+	strcpy(tmp_cmd, inputcmd);
 	tmp_token = strtok(tmp_cmd, " ");
 	while (tmp_token != NULL)
 	{
-		tmp_args[tmp_i++] = _strdup(tmp_token);
+		tmp_args[tmp_i++] = strdup(tmp_token);
 		tmp_token = strtok(NULL, " ");
 	}
 	tmp_args[tmp_i] = NULL;
