@@ -162,7 +162,7 @@ int bfree(void **);
 
 /* toem_atoi.c */
 int interactive(info_t *);
-int is_delim(char, char *);
+int is_delimiter(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 
@@ -175,7 +175,7 @@ void remove_comments(char *);
 
 /* builtin_functions.c */
 int _myexit(info_t *);
-int _mycd(info_t *);
+int _cd(info_t *);
 
 /* toem_builtin1.c */
 int _myhistory(info_t *);

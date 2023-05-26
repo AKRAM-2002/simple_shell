@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * _exit - exits the shell
+ * _myexit - exits the shell
  * @info: structure
  *  Return: exits with a given exit status
 */
-int _exit(info_t *info)
+int _myexit(info_t *info)
 {
 	int retval;
 
@@ -34,7 +34,7 @@ int _exit(info_t *info)
 */
 int _cd(info_t *info)
 {
-	char *s, *dir, buff[1024];
+	char *s, *directory, buff[1024];
 	int chdir_ret;
 
 	s = getcwd(buff, 1024);
@@ -43,11 +43,11 @@ int _cd(info_t *info)
 	if (!info->argv[1])
 	{
 		directory = _getenv(info, "HOME=");
-		if (!dir)
+		if (!directory)
 			chdir_ret = /* TODO: what should this be? */
 				chdir((directory = _getenv(info, "PWD=")) ? directory : "/");
 		else
-			chdir_ret = chdir(dir);
+			chdir_ret = chdir(directory);
 	}
 	else if (_strcmp(info->argv[1], "-") == 0)
 	{
@@ -58,8 +58,7 @@ int _cd(info_t *info)
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
-			chdir((directory = _getenv(info, "OLDPWD=")) ? directory : "/");
+		chdir_ret = chdir((directory = _getenv(info, "OLDPWD=")) ? directory : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
