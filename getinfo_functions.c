@@ -3,8 +3,9 @@
 /**
  * clearInfo - initializes info_t struct
  * @info: struct address
+ * Return: nothing
  */
-void cleaInfo(info_t *info)
+void clearInfo(info_t *info)
 {
 	info->arg = NULL;
 	info->argv = NULL;

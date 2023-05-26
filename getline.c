@@ -13,7 +13,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *length)
 	ssize_t r = 0;
 	size_t length_p = 0;
 
-	if (!*length) 
+	if (!*length)
 	{
 		free(*buf);
 		*buf = NULL;
@@ -99,16 +99,3 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 	return (r);
 }
 
-/**
- * sigintHandler - blocks ctrl-C
- * @sig_num: the signal number
- *
- * Return: void
- */
-/*void sigintHandler(__attribute__((unused))int sig_num)
-*{
-*	_puts("\n");
-*	_puts("$ ");
-*	_putchar(BUF_FLUSH);
-*}
-*/

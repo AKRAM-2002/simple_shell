@@ -45,7 +45,7 @@ int _cd(info_t *info)
 		directory = _getenv(info, "HOME=");
 		if (!dir)
 			chdir_ret = /* TODO: what should this be? */
-				chdir((directory = _getenv(info, "PWD=")) ? directory: "/");
+				chdir((directory = _getenv(info, "PWD=")) ? directory : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
@@ -59,7 +59,7 @@ int _cd(info_t *info)
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = /* TODO: what should this be? */
-			chdir((directory = _getenv(info, "OLDPWD=")) ? directory: "/");
+			chdir((directory = _getenv(info, "OLDPWD=")) ? directory : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
